@@ -1,0 +1,98 @@
+.white-links {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.ted-x {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(../images/tedx.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px;
+    z-index: 2;
+    top: 0;
+    left: 0;
+  }
+}
+.gap.wp-block-columns {
+  gap: 1rem;
+}
+
+.book-series.wp-block-columns {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 1rem;
+  gap: 1rem;
+
+  img {
+    height: 150px;
+    width: auto;
+  }
+
+  .wp-block-image {
+    text-align: center;
+  }
+
+  > .wp-block-column {
+    flex-basis: 100%;
+
+    @media (min-width: $screen-small) {
+      flex-basis: calc(50% - 1rem);
+    }
+
+    @media (min-width: $screen-medium) {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+  }
+}
+
+.book-series-titles {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 1rem;
+  display: none;
+
+  @media (min-width: $screen-medium) {
+    display: flex;
+  }
+}
+
+.bottom-text {
+  .wp-block-cover__inner-container a {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: calc(100% - 2rem) 0 1rem 1rem
+  }
+}
+
+.wp-block-column {
+  margin-left: 0;
+}
+
+.limit {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.colour-1, .colour-1 a { color: var(--accent-1); }
+.colour-2, .colour-2 a { color: var(--accent-2); }
+.colour-3, .colour-3 a { color: var(--accent-3); }
+.colour-4, .colour-4 a { color: var(--accent-4); }
+
+body {
+  font-size: 1.2rem;
+}
+
+a {
+  color: var(--accent-1);
+  text-decoration: none;
+}

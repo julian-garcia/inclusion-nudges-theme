@@ -1,0 +1,38 @@
+.header {
+  .site-title {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: auto;
+
+    h1 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  
+    img {
+      max-height: 150px;
+      width: auto;
+    }
+  }
+  .menu-main-menu-container {
+    background: var(--nav-bg);
+    padding: .5rem 0;
+  }
+  .menu {
+    display: flex;
+    list-style: none;
+    max-width: 1000px;
+    margin: 1rem auto;
+    padding: 0;
+    justify-content: space-evenly;
+    a {
+      color: var(--accent-1);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
+}

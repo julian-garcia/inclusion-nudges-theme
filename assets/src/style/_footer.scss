@@ -1,0 +1,16 @@
+.footer {
+  background: gainsboro;
+
+  .cc-license {
+    display: grid;
+    grid-template-columns: 1fr 6fr 2fr;
+    align-items: center;
+    gap: 1rem;
+    font-size: 14px;
+  }
+
+  & > * {
+    max-width: 1000px;
+    margin: 1rem auto;
+  }
+}
