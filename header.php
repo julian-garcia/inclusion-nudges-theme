@@ -11,15 +11,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
   <?php wp_head() ?>
 </head>
 <body class="container">
-  <header class="header">
-    <div class="site-title">
-      <h1>Let's make inclusion the norm<br>- everywhere, for everyone, by everyone!</h1>
-      <?php echo get_custom_logo(); ?>
-    </div>
+  <header class="header no-print">
     <?php
       wp_nav_menu(
         array(
@@ -27,6 +22,26 @@
           'container' => 'nav',
           'theme_location' => 'primary',
           'menu_class' => 'menu'
+        )
+      );
+    ?>
+    <div class="site-title">
+      <div class="small-only">
+        <?php echo get_custom_logo(); ?>
+      </div>
+      <h1>Let's make inclusion the norm<br>- everywhere, for everyone, by everyone!</h1>
+      <?php echo get_custom_logo(); ?>
+    </div>
+    <input type="checkbox" name="mobile" id="mobile" class="mobile-toggle">
+    <label for="mobile">&nbsp;</label>
+    <?php
+      wp_nav_menu(
+        array(
+          'menu' => 'primary',
+          'container' => 'nav',
+          'container_class' => 'mobile-menu-container',
+          'theme_location' => 'primary',
+          'menu_class' => 'mobile-menu'
         )
       );
     ?>

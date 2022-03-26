@@ -8,6 +8,7 @@
 
 .content {
   grid-area: content;
+  overflow-x: hidden;
 }
 
 .container {
@@ -20,35 +21,55 @@
     'footer';
 }
 
-.quarter-grid.wp-block-columns {
-  flex-wrap: wrap;
-
-  > .wp-block-column {
-    flex-basis: 100%;
-
-    @media (min-width: $screen-small) {
-      flex-basis: 50%;
-    }
-
-    @media (min-width: $screen-medium) {
-      flex-basis: 25%;
-    }
-  }
+.wp-block-column {
+  margin-left: 0;
+}
+.wp-block-columns {
+  margin-bottom: 0;
 }
 
-.auto-grid.wp-block-columns {
-  flex-wrap: wrap;
+.limit {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1rem;
+}
 
-  > .wp-block-column {
-    flex-basis: 100%;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
-    @media (min-width: $screen-small) {
-      flex-basis: 50%;
+* {
+  box-sizing: border-box;
+}
+
+.container .content, .footer {
+  .auto-grid.wp-block-columns {
+    flex-wrap: wrap;
+    margin: 0 auto;
+  
+    > .wp-block-column {
+      flex-basis: 100%;
+  
+      @media (min-width: $screen-xs) {
+        flex-basis: 50% !important;
+      }
+  
+      @media (min-width: $screen-medium) {
+        flex-basis: 0 !important;
+        flex-grow: 1 !important;
+      }
     }
-
-    @media (min-width: $screen-medium) {
-      flex-basis: 0;
-      flex-grow: 1;
+  }
+  .blog-grid {
+    .wp-block-post {
+      width: 100% !important;
+      @media (min-width: $screen-small) {
+        width: calc(50% - 1rem) !important;
+      }
+      @media (min-width: $screen-medium) {
+        width: calc(33.33333% - .83333em) !important;
+      }
     }
   }
 }
