@@ -14,7 +14,7 @@
 .ted-x {
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     background-image: url(../images/tedx.png);
     background-size: contain;
@@ -170,7 +170,6 @@
   }
 
   &.featured {
-    
     ul {
       background: var(--nav-bg);
       padding: 1rem 2rem;
@@ -180,8 +179,20 @@
   }
 }
 
+.wp-block-tag-cloud.tags {
+  a {
+    font-size: 1.2rem !important;
+    margin-right: 10px;
+    &:not(:last-of-type)::after {
+      content: ",";
+    }
+  }
+}
+
 .what-why-how {
-  h2 { margin-top: 0; }
+  h2 {
+    margin-top: 0;
+  }
   .wp-block-image {
     max-width: 100px;
     margin: auto;
@@ -200,10 +211,11 @@
 .search-form {
   text-align: center;
   margin: 2rem 0 3rem;
-  input[type=text], input[type=submit] {
+  input[type="text"],
+  input[type="submit"] {
     height: 3rem;
   }
-  input[type=submit] {
+  input[type="submit"] {
     background: var(--accent-4);
     border-radius: 5px;
     border: none;
@@ -212,17 +224,43 @@
   }
 }
 
-.colour-1, .colour-1 a { color: var(--accent-1); }
-.colour-2, .colour-2 a { color: var(--accent-2); }
-.colour-3, .colour-3 a { color: var(--accent-3); }
-.colour-4, .colour-4 a { color: var(--accent-4); }
-.bg-1 { background: var(--accent-1); }
-.bg-2 { background: var(--accent-2); }
-.bg-3 { background: var(--accent-3); }
-.bg-4 { background: var(--accent-4); }
-.grey-bg { background: var(--nav-bg); }
-.white-bg { background: white; }
-.image-middle img { vertical-align: middle; }
+.colour-1,
+.colour-1 a {
+  color: var(--accent-1);
+}
+.colour-2,
+.colour-2 a {
+  color: var(--accent-2);
+}
+.colour-3,
+.colour-3 a {
+  color: var(--accent-3);
+}
+.colour-4,
+.colour-4 a {
+  color: var(--accent-4);
+}
+.bg-1 {
+  background: var(--accent-1);
+}
+.bg-2 {
+  background: var(--accent-2);
+}
+.bg-3 {
+  background: var(--accent-3);
+}
+.bg-4 {
+  background: var(--accent-4);
+}
+.grey-bg {
+  background: var(--nav-bg);
+}
+.white-bg {
+  background: white;
+}
+.image-middle img {
+  vertical-align: middle;
+}
 
 body {
   font-size: 1.2rem;

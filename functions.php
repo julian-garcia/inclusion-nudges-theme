@@ -144,5 +144,6 @@ add_action( 'init', 'setup_menus' );
 add_action( 'init', 'testimonial_post_type' );
 add_action( 'init', 'question_post_type' );
 add_action( 'widgets_init', 'widget_areas' );
+add_post_type_support( 'page', 'excerpt' );
 add_shortcode( 'testimonials' , 'testimonials_shortcode');
 add_shortcode( 'questions' , 'questions_shortcode');

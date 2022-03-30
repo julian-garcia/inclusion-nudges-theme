@@ -17,7 +17,9 @@
       echo '<a href="' . get_field('external_author_link') . '" target="_blank">' . get_field('external_author_name') . '</a>';
     } ?>
   </p>
-  <?php the_post_thumbnail(); ?>
+  <p class="has-text-align-center">
+    <?php the_post_thumbnail(); ?>
+  </p>
   <p>
     <img class="read-icon" src="<?php echo get_template_directory_uri(); ?>/assets/dist/images/eye.png" alt="">
     <?php echo floor(str_word_count(get_the_content()) / 250); ?> minute read

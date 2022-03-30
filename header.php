@@ -9,6 +9,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php if (is_tag()): ?>
+  <meta name="description" content="Inclusion Nudges Articles: <?php echo single_tag_title() ?>"/>
+  <?php elseif (is_search()): ?>
+  <meta name="description" content="Inclusion Nudges search results for: <?php echo $_GET['s'] ?>"/>
+  <?php elseif (get_the_excerpt()): ?>
+  <meta name="description" content="<?php echo get_the_excerpt() ?>"/>
+  <?php endif; ?>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <?php wp_head() ?>

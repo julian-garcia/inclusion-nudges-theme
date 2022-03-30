@@ -2,7 +2,11 @@
   margin-bottom: 4rem;
   position: relative;
 
-  .authors + .wp-post-image {
+  & > * {
+    max-width: 800px;
+  }
+
+  .authors + p .wp-post-image {
     max-width: 100%;
     max-height: 250px;
     display: block;
@@ -36,16 +40,19 @@
 
     @media (min-width: $screen-medium) {
       right: 10%;
+      top: 200px;
     }
 
     @media (min-width: $screen-large) {
-      right: 15%;
+      right: 25%;
+      top: 200px;
     }
   }
 }
 
-@media print {    
-  .no-print, .no-print * {
+@media print {
+  .no-print,
+  .no-print * {
     display: none !important;
   }
 }
