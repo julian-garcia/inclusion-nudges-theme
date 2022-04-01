@@ -9,7 +9,6 @@ function config_theme_support() {
 function enqueue_styles() {
   $version = wp_get_theme()->get('Version');
   wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/assets/dist/main.css', array(), $version, 'all' );
-  wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap">', array(), '', 'all' );
   wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css', array('main'), $version, 'all' );
 }
 
@@ -118,20 +117,20 @@ function question_post_type() {
 }
 
 function testimonials_shortcode() {
-  $output = '<div class="splide"> <div class="splide__track"> <ul class="splide__list">';
+  $output = '<div class="splide" tabindex="-1"> <div class="splide__track"> <ul class="splide__list" tabindex="-1">';
   $query = new  WP_Query( array( 'post_type' => 'testimonial', 'orderby' => 'rand' ) );
   while ( $query->have_posts() ) : $query->the_post();
-      $output .= '<li class="splide__slide">' . '<strong>' . get_the_content() . '</strong>' . get_the_title() . '<br>' . get_the_excerpt() . '</li>';
+      $output .= '<li class="splide__slide" tabindex="-1">' . '<strong>' . get_the_content() . '</strong>' . get_the_title() . '<br>' . get_the_excerpt() . '</li>';
   endwhile;
   wp_reset_query();
   return $output . ' </ul> </div> </div> ';
 }
 
 function questions_shortcode() {
-  $output = '<div class="splide-questions"> <div class="splide__track"> <ul class="splide__list">';
+  $output = '<div class="splide-questions" tabindex="-1"> <div class="splide__track"> <ul class="splide__list" tabindex="-1">';
   $query = new  WP_Query( array( 'post_type' => 'question', 'orderby' => 'rand' ) );
   while ( $query->have_posts() ) : $query->the_post();
-      $output .= '<li class="splide__slide">' . '<h3 class="question">' . get_the_content() . '</h3>' . '</li>';
+      $output .= '<li class="splide__slide" tabindex="-1">' . '<h3 class="question">' . get_the_content() . '</h3>' . '</li>';
   endwhile;
   wp_reset_query();
   return $output . ' </ul> </div> </div> ';

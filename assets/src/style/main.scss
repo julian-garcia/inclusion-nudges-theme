@@ -1,12 +1,26 @@
-@import 'variables';
-@import 'layout';
-@import 'header';
-@import 'footer';
-@import 'page';
-@import 'post';
-@import 'headline';
-@import 'testimonials';
+@import "variables";
+@import "layout";
+@import "header";
+@import "footer";
+@import "page";
+@import "post";
+@import "headline";
+@import "testimonials";
+
+@font-face {
+  font-family: karla;
+  src: url(../fonts/Karla-Bold.woff);
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: karla;
+  src: url(../fonts/Karla-Regular.woff);
+  font-weight: normal;
+  font-display: swap;
+}
 
 * {
-  font-family: 'Karla', sans-serif;
+  font-family: karla, sans-serif;
 }

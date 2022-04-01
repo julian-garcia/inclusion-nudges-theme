@@ -1,7 +1,7 @@
-<div class="limit post">
+<div class="limit post article">
   <h1><?php the_title(); ?></h1>
   <?php if (get_field('authors')): ?>
-  <p class="authors"> By
+    <p class="authors"> By
     <?php 
       $authors = get_field("authors");
       foreach( $authors as $author => $auth): 
@@ -12,10 +12,15 @@
         }
       endforeach;
     ?>
-    <?php endif; ?>
-    <?php if (get_field('external_author_name')) {
+  <?php endif; ?>
+  <?php if (get_field('external_author_name')): ?>
+    <?php if (!get_field('authors')): ?> <p class="authors"> By <?php endif; ?>
+    <?php if (get_field('external_author_link')) { 
       echo '<a href="' . get_field('external_author_link') . '" target="_blank">' . get_field('external_author_name') . '</a>';
-    } ?>
+    } else {
+      echo get_field('external_author_name');
+    }?>
+  <?php endif; ?>
   </p>
   <p class="has-text-align-center">
     <?php the_post_thumbnail(); ?>

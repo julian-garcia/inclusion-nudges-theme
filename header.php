@@ -16,8 +16,6 @@
   <?php elseif (get_the_excerpt()): ?>
   <meta name="description" content="<?php echo get_the_excerpt() ?>"/>
   <?php endif; ?>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <?php wp_head() ?>
 </head>
 <body class="container">

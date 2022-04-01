@@ -60,6 +60,14 @@
     width: auto;
   }
 
+  a {
+    display: block;
+    padding: 8px 0;
+    @media (min-width: $screen-small-medium) {
+      padding: 2px 0;
+    }
+  }
+
   .wp-block-image {
     text-align: center;
   }
@@ -138,6 +146,10 @@
 
   .splide__pagination {
     bottom: -1.5rem;
+    display: none;
+    @media (min-width: $screen-small) {
+      display: flex;
+    }
   }
 }
 
@@ -156,6 +168,10 @@
 
   .splide__pagination {
     bottom: -22px;
+    display: none;
+    @media (min-width: $screen-small) {
+      display: flex;
+    }
   }
 }
 
@@ -175,6 +191,19 @@
       padding: 1rem 2rem;
       margin: 0 -2rem 2rem;
       max-width: unset;
+    }
+  }
+
+  .page-numbers {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    padding-top: 4px;
+    &.current {
+      background: var(--accent-1);
+      color: white;
     }
   }
 }
@@ -205,6 +234,12 @@
 .organisations {
   p {
     margin: 0;
+  }
+}
+
+.share-examples {
+  img {
+    height: 20px;
   }
 }
 
