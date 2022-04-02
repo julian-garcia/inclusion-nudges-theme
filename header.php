@@ -16,6 +16,7 @@
   <?php elseif (get_the_excerpt()): ?>
   <meta name="description" content="<?php echo get_the_excerpt() ?>"/>
   <?php endif; ?>
+  <meta name="theme-color" content="#FFFFFF" />
   <?php wp_head() ?>
 </head>
 <body class="container">

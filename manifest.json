@@ -1,0 +1,57 @@
+{
+  "short_name": "Inclusion Nudges",
+  "name": "Inclusion Nudges",
+  "start_url": "/",
+  "display": "standalone",
+  "description": "Inclusion Nudges is a change approach developed in 2013 by Lisa Kepinski and Tinna C. Nielsen based on their extensive experience as global change makers for inclusion.",
+  "dir": "ltr",
+  "categories": "books,business,education,productivity,social",
+  "lang": "en",
+  "orientation": "any",
+  "scope": "/",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "assets/dist/images/icon_48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/dist/images/icon_72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/dist/images/icon_96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/dist/images/icon_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/dist/images/icon_168x168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/dist/images/icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/dist/images/icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/dist/images/maskable_icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

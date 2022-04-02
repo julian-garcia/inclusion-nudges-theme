@@ -1,31 +1,41 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const glob = require('glob');
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const WorkboxPlugin = require("workbox-webpack-plugin");
+const glob = require("glob");
 
 module.exports = {
   context: path.resolve(__dirname, "assets"),
   output: {
-    filename: 'main.bundle.js',
-    path: path.resolve(__dirname, "assets/dist")
+    filename: "main.bundle.js",
+    path: path.resolve(__dirname, "assets/dist"),
   },
   plugins: [
     new ImageminPlugin({
       externalImages: {
-        context: '.',
-        sources: glob.sync('assets/src/images/**/*.{png,jpg,svg,gif}'),
-        destination: 'assets/dist/images',
-        fileName: '[name].[ext]'
-      }
+        context: ".",
+        sources: glob.sync("assets/src/images/**/*.{png,jpg,svg,gif}"),
+        destination: "assets/dist/images",
+        fileName: "[name].[ext]",
+      },
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
         // exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader','postcss-loader','sass-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.m?js$/,
@@ -33,10 +43,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
-  }
-}
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
+};

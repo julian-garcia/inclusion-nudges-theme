@@ -136,6 +136,10 @@ function questions_shortcode() {
   return $output . ' </ul> </div> </div> ';
 }
 
+function manifest_link() {   
+  echo '<link rel="manifest" href="' . get_template_directory_uri() . '/manifest.json">';
+}
+
 add_action( 'after_setup_theme', 'config_theme_support' );
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'enqueue_script' );
@@ -143,6 +147,7 @@ add_action( 'init', 'setup_menus' );
 add_action( 'init', 'testimonial_post_type' );
 add_action( 'init', 'question_post_type' );
 add_action( 'widgets_init', 'widget_areas' );
+add_action( 'wp_head', 'manifest_link' );
 add_post_type_support( 'page', 'excerpt' );
 add_shortcode( 'testimonials' , 'testimonials_shortcode');
 add_shortcode( 'questions' , 'questions_shortcode');
