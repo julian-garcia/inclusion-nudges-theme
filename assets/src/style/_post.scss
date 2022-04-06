@@ -6,6 +6,14 @@
     max-width: 800px;
   }
 
+  #footnotes {
+    padding-left: 0;
+    list-style: inside decimal;
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+
   &.article hr {
     margin: 3rem 0;
     border-color: var(--accent-2);

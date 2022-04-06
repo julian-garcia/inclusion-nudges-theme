@@ -9,7 +9,14 @@ function config_theme_support() {
 function enqueue_styles() {
   $version = wp_get_theme()->get('Version');
   wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/assets/dist/main.css', array(), $version, 'all' );
-  wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/style.css', array('main'), $version, 'all' );
+  wp_enqueue_style( 'preload-style', get_stylesheet_directory_uri() . '/style.css', array('main'), $version, 'all' );
+}
+
+function preload_filter( $html, $handle ){
+  if (strcmp($handle, 'preload-style') == 0) {
+    $html = str_replace("rel='stylesheet'", "rel='preload' as='style' ", $html);
+  }
+  return $html;
 }
 
 function enqueue_script() {
@@ -130,7 +137,7 @@ function questions_shortcode() {
   $output = '<div class="splide-questions" tabindex="-1"> <div class="splide__track"> <ul class="splide__list" tabindex="-1">';
   $query = new  WP_Query( array( 'post_type' => 'question', 'orderby' => 'rand' ) );
   while ( $query->have_posts() ) : $query->the_post();
-      $output .= '<li class="splide__slide" tabindex="-1">' . '<h3 class="question">' . get_the_content() . '</h3>' . '</li>';
+      $output .= '<li class="splide__slide" tabindex="-1">' . '<h2 class="question">' . get_the_content() . '</h2>' . '</li>';
   endwhile;
   wp_reset_query();
   return $output . ' </ul> </div> </div> ';
@@ -138,6 +145,15 @@ function questions_shortcode() {
 
 function manifest_link() {   
   echo '<link rel="manifest" href="' . get_template_directory_uri() . '/manifest.json">';
+}
+
+function search_filter( $query ) {
+    if ( $query->is_search ) {
+        $query->query_vars['orderby'] = 'title';
+        $query->query_vars['order'] = 'ASC';
+        $query->set( 'post_type', array('post','page') );
+    }
+    return $query;
 }
 
 add_action( 'after_setup_theme', 'config_theme_support' );
@@ -151,3 +167,5 @@ add_action( 'wp_head', 'manifest_link' );
 add_post_type_support( 'page', 'excerpt' );
 add_shortcode( 'testimonials' , 'testimonials_shortcode');
 add_shortcode( 'questions' , 'questions_shortcode');
+add_filter( 'style_loader_tag',  'preload_filter', 10, 2 );
+add_filter('pre_get_posts', 'search_filter');

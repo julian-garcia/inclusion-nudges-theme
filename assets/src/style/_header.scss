@@ -15,12 +15,15 @@
 
     h1 {
       font-weight: bold;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       text-align: center;
 
       @media (min-width: $screen-small) {
-        font-size: 2rem;
         text-align: left;
+      }
+
+      @media (min-width: $screen-small-medium) {
+        font-size: 1.4rem;
       }
     }
 

@@ -139,7 +139,7 @@
 .splide {
   max-width: 1000px;
   margin: 0 auto 3rem;
-  padding: 2rem 4rem 0;
+  padding: 0 4rem 0;
   text-align: center;
   min-height: 100px;
   position: relative;
@@ -153,13 +153,19 @@
   }
 }
 
-.splide-questions {
-  max-width: 100%;
+.splide__list {
+  align-items: center;
+}
+
+.splide-questions.splide--slide {
+  max-width: 1000px;
   position: relative;
+  margin: 1rem auto 3rem;
 
   .question {
     margin: 0;
     p {
+      font-size: 1.4rem;
       padding: 0 3rem;
       margin: 0;
       text-align: center;
@@ -266,6 +272,10 @@
 .colour-2,
 .colour-2 a {
   color: var(--accent-2);
+}
+.colour-2b,
+.colour-2b a {
+  color: var(--accent-2b);
 }
 .colour-3,
 .colour-3 a {

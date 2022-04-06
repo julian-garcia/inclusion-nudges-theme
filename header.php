@@ -35,7 +35,7 @@
       <div class="small-only">
         <?php echo get_custom_logo(); ?>
       </div>
-      <h1>Let's make inclusion the norm<br>- everywhere, for everyone, by everyone!</h1>
+      <h1>Creating Inclusive Organizations Using Behavioral&nbsp;Design&nbsp;Actions<br>Inclusion Nudges are proven solutions for change&nbsp;agents<br>You get practical actions based behavioral&nbsp;insights<br>You make inclusion the norm</h1>
       <?php echo get_custom_logo(); ?>
     </div>
     <input type="checkbox" name="mobile" id="mobile" class="mobile-toggle">
