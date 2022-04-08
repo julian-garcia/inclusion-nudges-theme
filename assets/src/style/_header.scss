@@ -4,18 +4,18 @@
     grid-template-columns: auto;
     align-items: center;
     gap: 0.5rem;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 0 1rem;
 
     @media (min-width: $screen-small) {
-      grid-template-columns: 3fr 1fr;
-      gap: 2rem;
+      grid-template-columns: 4fr 1fr;
+      gap: 1rem;
     }
 
     h1 {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       text-align: center;
 
       @media (min-width: $screen-small) {
@@ -23,7 +23,21 @@
       }
 
       @media (min-width: $screen-small-medium) {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+      }
+
+      span {
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        display: block;
+
+        &:first-child {
+          margin-top: 10px;
+        }
+      }
+
+      + a {
+        text-align: right;
       }
     }
 
@@ -32,7 +46,7 @@
       width: auto;
       display: none;
       @media (min-width: $screen-small) {
-        display: block;
+        display: inline;
       }
     }
 

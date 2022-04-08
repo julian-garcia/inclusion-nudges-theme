@@ -42,4 +42,8 @@ setTimeout(() => {
       pagination: true,
     }).mount();
   }
+
+  if (document.getElementById("searchform")) {
+    document.getElementById("s").focus();
+  }
 });
