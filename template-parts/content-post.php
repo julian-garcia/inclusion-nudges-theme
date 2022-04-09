@@ -40,7 +40,7 @@
     <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo get_the_permalink(); ?>" target="_blank" rel="noreferrer">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/images/linkedin-dark.svg" alt="">
     </a>
-    <a href="mailto:?&amp;subject=<?php echo get_the_title(); ?>&amp;body=<?php echo get_the_permalink(); ?>" target="_blank" rel="noreferrer">
+    <a href="mailto:?subject=<?php echo urlencode(get_the_title()); ?>&amp;body=<?php echo urlencode(get_the_permalink()); ?>">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/images/email-dark.svg" alt="">
     </a>
     <a onclick="window.print();">
